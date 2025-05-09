@@ -73,11 +73,13 @@ p {
 
 /* navbar */
 .navbar-container {
+  position: relative;
   width: 100%;
+  display: flex;
+  align-items: center;
   height: 80px;
   background-color: #fff;
   padding: 0 2em;
-  position: relative;
   overflow: hidden;
   box-sizing: border-box;
   opacity: 0;
@@ -89,22 +91,27 @@ p {
 }
 
 nav {
+  overflow: hidden;
   position: relative;
+  display: flex;
+  align-items: center;
+  width: 100vw;
 }
 
 .navbar-items {
   list-style: none;
   position: absolute;
-  display: inline-block;
-  height: 80px;
-  line-height: 80px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  height: 100%;
+  width: auto;
   right: 0;
   overflow: hidden;
 }
 
 .navbar-items li {
-  display: inline-block;
-  margin-left: 25px;
+  position: relative;
   cursor: pointer;
 }
 
@@ -114,47 +121,18 @@ nav {
   transition: 0.5s;
 }
 
-.linha1,
-.linha2,
-.linha3,
-.linha4 {
+.linha {
   position: absolute;
   background-color: #000;
-  margin-top: -30px;
   width: 0;
   height: 1px;
   color: #000;
   transition: 0.2s ease-in-out;
 }
 
-.linha5 {
-  position: relative;
-  background-color: #000;
-  width: 0px;
-  height: 1px;
-  color: #000;
-  transition: 0.2s ease-in-out;
-}
-
-.linha4 {
-  margin-left: -5px;
-}
-
 .navbar-items li a:hover {
-  .linha1 {
-    width: 47px;
-  }
-
-  .linha2 {
-    width: 50px;
-  }
-
-  .linha3 {
-    width: 65px;
-  }
-
-  .linha4 {
-    width: 50px;
+  .linha {
+    width: 100%;
   }
 }
 
@@ -165,10 +143,12 @@ nav {
 
 /*main*/
 /*intro*/
+
 .intro-container {
   padding-top: 60px;
   padding-bottom: 100px;
   display: flex;
+  overflow: hidden;
 }
 
 .name-container {
@@ -249,6 +229,7 @@ nav {
   position: relative;
   opacity: 0;
   animation: showEffect 0.6s 0.95s ease 1 forwards;
+  overflow: hidden;
 }
 
 .main-banner h1,
@@ -270,6 +251,7 @@ nav {
 
 .specialties-container {
   padding: 5em 0;
+  overflow: hidden;
 }
 
 .specialties-container ul {
@@ -318,6 +300,7 @@ nav {
 .pricing-container {
   padding-bottom: 5em;
   text-align: center;
+  overflow: hidden;
 }
 
 .pricing-container h1 {
@@ -337,6 +320,7 @@ nav {
   position: relative;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
 }
 
 .plan {
@@ -446,7 +430,8 @@ nav {
 .contact-container {
   text-align: center;
   padding-top: 5em;
-  padding-bottom: 2em;
+  padding-bottom: 1em;
+  overflow: hidden;
 }
 
 .contact-container h2 {
@@ -500,31 +485,75 @@ nav {
   align-items: center;
   padding-bottom: 30px;
 }
+
 .back-to-home {
+  position: relative;
   text-decoration: none;
   color: #000;
 }
 
 .back-to-home:hover {
-  .linha5 {
-    width: 110px;
+  .linha {
+    width: 100%;
   }
 }
 
 /* footer */
 footer {
   text-align: center;
-  margin-bottom: 30px;
+  min-height: 150px;
+  padding: 50px;
+}
+
+.contactIcons {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+
+.contactIcons ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  list-style: none;
+}
+
+.contactIcons a {
+  text-decoration: none;
+  color: #000;
+}
+
+.contactIcons ul li {
+  display: flex;
+  position: relative;
+  padding: 13px 15px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  transition: 0.5s ease;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.contactIcons ul a li {
+  color: #000;
+  transition: 0.5s ease;
+}
+
+.contactIcons ul a:hover li {
+  color: #fff;
+}
+
+.contactIcons ul li:hover {
+  background-color: #000;
 }
 
 footer a {
   font-weight: bold;
   text-decoration: none;
-  color: #202b34;
 }
 
 /* media queries */
-@media screen and (max-width: 1100px) {
+@media (max-width: 1100px) {
   /*css rules */
 
   .plans-container {
@@ -537,18 +566,14 @@ footer a {
   }
 }
 
-@media screen and (max-width: 900px) {
+@media (max-width: 900px) {
   .plans-container,
   .specialties-container ul {
     flex-wrap: wrap;
   }
 }
 
-@media screen and (max-width: 576px) {
-  * {
-    overflow-x: hidden;
-  }
-
+@media (max-width: 576px) {
   .intro-container {
     display: none;
   }
@@ -559,7 +584,6 @@ footer a {
 
   .navbar-items li {
     font-size: 14px;
-    margin-left: 10px;
   }
 
   .plans-container {
@@ -589,5 +613,122 @@ footer a {
     margin-left: 0;
     margin-right: 0;
     box-sizing: border-box;
+  }
+}
+
+@media (min-width: 1920px) {
+  .navbar-container {
+    height: 130px;
+    padding: 0 2em;
+  }
+
+  .navbar-items li {
+    font-size: 22px;
+  }
+
+  .logo {
+    width: 130px;
+  }
+
+  /*main*/
+  .name-container .name_part1 h1,
+  .name-container .name_part2 h1 {
+    font-size: 85px;
+  }
+
+  .intro-text {
+    font-size: 20px;
+  }
+
+  .main-banner {
+    padding: 15em 0;
+  }
+
+  .main-banner h1 {
+    font-size: 64px;
+  }
+
+  .main-banner p {
+    font-size: 42px;
+  }
+
+  .fas {
+    font-size: 90px;
+  }
+
+  .specialties-container ul li p {
+    font-size: 23px;
+  }
+
+  .pricing-container h1 {
+    font-size: 46px;
+  }
+
+  .pricing-container {
+    font-size: 24px;
+  }
+
+  .plan {
+    max-width: 375px;
+  }
+
+  .plan li {
+    height: 70px;
+    line-height: 70px;
+  }
+
+  .plan .plan-btn {
+    font-size: 32px;
+  }
+
+  .searchdomain-container {
+    padding: 10em 0;
+  }
+
+  .searchdomain-container h2 {
+    font-size: 52px;
+  }
+
+  .searchdomain-container p {
+    color: #d5d5d5;
+    font-size: 32px;
+  }
+
+  .searchdomain-container input[type="text"] {
+    font-size: 28px;
+  }
+
+  .searchdomain-container input[type="submit"] {
+    font-size: 32px;
+  }
+
+  .contact-container h2 {
+    font-size: 48px;
+  }
+
+  .contact-container p {
+    font-size: 28px;
+  }
+
+  .contact-container input,
+  .contact-container textarea {
+    padding: 15px 20px;
+    font-size: 26px;
+  }
+
+  .back-to-home {
+    font-size: 24px;
+  }
+
+  /* footer */
+  footer {
+    min-height: 250px;
+    max-height: 250px;
+    padding: 75px;
+  }
+
+  .contactIcons ul li {
+    padding: 22px 26px;
+    font-size: 24px;
   }
 }
