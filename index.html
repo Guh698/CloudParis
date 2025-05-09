@@ -203,13 +203,28 @@
               Mande uma mensagem para nós conversármos sobre a melhor hospedagem
               para o seu negócio.
             </p>
-            <form>
-              <input type="text" name="name" placeholder="Seu nome" />
-              <input type="email" name="email" placeholder="Seu e-mail" />
+            <form
+              onsubmit="sendScheduling(event)"
+              action="https://formsubmit.co/go459103@gmail.com"
+              method="POST"
+            >
+              <input type="text" name="name" placeholder="Seu nome" required />
+              <input
+                type="email"
+                name="email"
+                placeholder="Seu e-mail"
+                required
+              />
               <textarea
                 name="message"
                 placeholder="Digite sua mensagem"
+                required
               ></textarea>
+              <input
+                type="hidden"
+                name="_autoresponse"
+                value="Obrigado pelo agendamento! Entraremos em contato em breve."
+              />
               <input type="submit" value="Enviar" />
             </form>
           </section>
