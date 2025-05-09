@@ -22,8 +22,8 @@
     <link rel="shortcut icon" href="img/parisicon.png" type="image/x-icon" />
     <title>CloudParis</title>
   </head>
-  <body data-scroll-container>
-    <div class="container">
+  <body>
+    <div class="container" data-scroll-container>
       <!--nav-->
       <a href="#" id="Home-top"></a>
       <div class="navbar-container">
@@ -33,25 +33,25 @@
             <li>
               <a href="#home"
                 >Home
-                <div class="linha1"></div
+                <div class="linha"></div
               ></a>
             </li>
             <li>
               <a href="#plans"
                 >Planos
-                <div class="linha2"></div
+                <div class="linha"></div
               ></a>
             </li>
             <li>
               <a href="#contact-container"
                 >Contato
-                <div class="linha3"></div
+                <div class="linha"></div
               ></a>
             </li>
             <li>
               <a href="#" class="default-btn"
                 >Login
-                <div class="linha4"></div
+                <div class="linha"></div
               ></a>
             </li>
           </ul>
@@ -213,17 +213,33 @@
               <input type="submit" value="Enviar" />
             </form>
           </section>
-          <div class="home-btn">
-            <a href="#Home-top" class="back-to-home"
-              >back to home
-              <div class="linha5"></div
-            ></a>
-          </div>
           <a href="#" id="contact-container"></a>
         </main>
       </div>
       <footer>
-        <p><a href="#">Meu linkedin</a></p>
+        <div class="home-btn">
+          <a href="#Home-top" class="back-to-home"
+            >back to home
+            <div class="linha"></div
+          ></a>
+        </div>
+        <div class="contactIcons">
+          <ul class="MediaIcons">
+            <a href="https://www.instagram.com/guhs_32/" target="_blank"
+              ><li><i class="fa-brands fa-instagram"></i></li
+            ></a>
+            <a
+              href="https://wa.me/5519993244478?text=Olá,%20bom%20dia!"
+              target="_blank"
+              ><li><i class="fa-brands fa-whatsapp"></i></li
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/luiz-gustavo-silva-santos-oliveira/"
+              target="_blank"
+              ><li><i class="fa-brands fa-linkedin-in"></i></li
+            ></a>
+          </ul>
+        </div>
       </footer>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
